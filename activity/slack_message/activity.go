@@ -13,7 +13,7 @@ package slack_activity
 import (
 	"fmt"
 
-	"github.com/nlopes/slack"
+	//"github.com/nlopes/slack"
 	"github.com/TIBCOSoftware/flogo-cli/tools/activity"
 )
 
