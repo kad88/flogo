@@ -8,13 +8,13 @@
     {
       "name": "token",
       "type": "string"
-    }
+    },
 	{
-	   "name": "channelID"
+	   "name": "channelID",
 	   "type": "string"
-	}
+	},
 	{
-	   "name": "message"
+	   "name": "message",
 	   "type": "string"
 	}
   ],
