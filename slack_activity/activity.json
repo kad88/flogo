@@ -1,0 +1,27 @@
+{
+  "name": "slack_activity",
+  "version": "0.0.1",
+  "type": "flogo:activity",
+  "description": "sends a message on slack",
+  "author": "KD",
+  "inputs":[
+    {
+      "name": "token",
+      "type": "string"
+    }
+	{
+	   "name": "channelID"
+	   "type": "string"
+	}
+	{
+	   "name": "message"
+	   "type": "string"
+	}
+  ],
+  "outputs": [
+    {
+      "name": "success",
+      "type": "boolean"
+    }
+  ]
+}
