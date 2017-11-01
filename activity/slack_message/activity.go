@@ -33,18 +33,22 @@ func (a *MyActivity) Metadata() *activity.Metadata {
 // Eval implements activity.Activity.Eval
 func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 
-	name := context.GetInput("name").(string)
-	salutation := context.GetInput("salutation").(string)
+	token := context.GetInput("token").(string)
+	channel := context.GetInput("channelID").(string)
+	message := context.GetInput("message").(string)
 
 	//use the log object to log the greetings
-	log.Debugf("The Flogo engine says [%s] to [%s]", salutation, name)
+	log.Debugf("token used: [%s], token)
+	log.Debugf("channelId used: [%s], channel)
+	log.Debugf("message sent: [%s], message)
 
 	// Set the result as part of the context
-	context.setOutput("result", "The Flogo engine says "+salutation+" to "+name)
+	
+	//context.setOutput("result", "The Flogo engine says "+salutation+" to "+name)
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	api := slack.New("xoxp-2227445904-4843514457-260501703687-6de177cb22ae24b837b9357f5c96822b")
-
+	//api := slack.New("xoxp-2227445904-4843514457-260501703687-6de177cb22ae24b837b9357f5c96822b")
+	api:= slack.New(token)
 	//Gets user details
 	/*user, err := api.GetUserInfo("U04QTF4DF")  //user: kaddour
 	if err != nil {
@@ -70,13 +74,13 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 		*/
 	}
 	params.Attachments = []slack.Attachment{attachment}
-	channelID, timestamp, err := api.PostMessage("U04QTF4DF", "Some text", params)
-
+	//channelID, timestamp, err := api.PostMessage("U04QTF4DF", "Some text", params)
+	channelID, timestamp, err := api.PostMessage(channel, message, params)
 	if err != nil {
 		fmt.Printf("%s\n", err)
 		return
 	}
 	fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
-
+	log.Debugf("Message successfully sent to channel %s at %s", channelID, timestamp)
 	return true, nil
 }
