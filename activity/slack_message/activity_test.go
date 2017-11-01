@@ -48,6 +48,11 @@ func TestEval(t *testing.T) {
 	tc := test.NewTestActivityContext(getActivityMetadata())
 
 	//setup attrs
+	
+	
+	
+	act.Eval(tc)
+	//check result attr
 
 	act.Eval(tc)
 
