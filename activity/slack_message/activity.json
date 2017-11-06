@@ -2,6 +2,7 @@
   "name": "slack_activity",
   "version": "0.0.1",
   "type": "flogo:activity",
+  "ref": "github.com/kad88/flogo/activity/slack_message",
   "description": "sends a message on slack",
   "author": "KD",
   "inputs":[
