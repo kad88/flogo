@@ -1,4 +1,4 @@
-package slack_activity
+package slack_message
 
 // Activity that sends a message to Slack
 
