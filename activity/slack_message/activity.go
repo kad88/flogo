@@ -6,7 +6,7 @@ package slack_activity
 // Returns output message sent successfully or not
 
 import (
-	"fmt"
+	
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/nlopes/slack"
@@ -55,7 +55,8 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 		fmt.Printf("%s\n", err)
 		return
 	}
-	fmt.Printf("ID: %s, Fullname: %s, Email: %s\n", user.ID, user.Profile.RealName, user.Profile.Email)
+	log.Debugf("ID: %s, Fullname: %s, Email: %s\n", user.ID, user.Profile.RealName, user.Profile.Email)
+	//fmt.Printf("ID: %s, Fullname: %s, Email: %s\n", user.ID, user.Profile.RealName, user.Profile.Email)
 	*/
 
 	//Sends message to user
@@ -80,7 +81,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 		fmt.Printf("%s\n", err)
 		return
 	}
-	fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
+	//fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
 	log.Debugf("Message successfully sent to channel %s at %s", channelID, timestamp)
 	return true, nil
 }
