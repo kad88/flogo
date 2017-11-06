@@ -7,7 +7,7 @@ package slack_activity
 
 import (
 	
-
+    "github.com/TIBCOSoftware/flogo-lib/logger"
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/nlopes/slack"
 )
