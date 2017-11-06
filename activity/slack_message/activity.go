@@ -57,7 +57,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 		fmt.Printf("%s\n", err)
 		return
 	} */
-	log.Debugf("ID: %s, Fullname: %s, Email: %s\n", user.ID, user.Profile.RealName, user.Profile.Email)
+	//log.Debugf("ID: %s, Fullname: %s, Email: %s\n", user.ID, user.Profile.RealName, user.Profile.Email)
 	//fmt.Printf("ID: %s, Fullname: %s, Email: %s\n", user.ID, user.Profile.RealName, user.Profile.Email)
 
 
@@ -80,7 +80,8 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 	//channelID, timestamp, err := api.PostMessage("U04QTF4DF", "Some text", params)
 	channelID, timestamp, err := api.PostMessage(channel, message, params)
 	if err != nil {
-		fmt.Printf("%s\n", err)
+		//fmt.Printf("%s\n", err)
+		log.Debugf("%s\n",err)
 		return
 	}
 	//fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
