@@ -38,9 +38,9 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 	message := context.GetInput("message").(string)
 
 	//use the log object to log the greetings
-	log.Debugf("token used: [%s], token)
-	log.Debugf("channelId used: [%s], channel)
-	log.Debugf("message sent: [%s], message)
+	log.Debugf("token used: [%s]", token)
+	log.Debugf("channelId used: [%s]", channel)
+	log.Debugf("message sent: [%s]", message)
 
 	// Set the result as part of the context
 	
