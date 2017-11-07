@@ -49,7 +49,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 	//context.setOutput("result", "The Flogo engine says "+salutation+" to "+name)
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	//api := slack.New("xoxp-2227445904-4843514457-260501703687-6de177cb22ae24b837b9357f5c96822b")
+	//api := slack.New("token")
 	api:= slack.New(token)
 	/* Gets user details
 	/*user, err := api.GetUserInfo("U04QTF4DF")  //user: kaddour
